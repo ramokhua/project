@@ -289,8 +289,10 @@ Kindly find the user manual on the help section t help you navigate through our 
               </div>
               <div class="edit-mode" hidden>
                 <textarea class="edit-textarea" rows="4">
-Documents vary from organization to organization, but normally they would ask for your transcript, resume and cover letter along with the documents provided by the course coordinator.</textarea
-                >
+                  Documents vary from organization to organization, but normally they
+                  would ask for your transcript, resume and cover letter along with the 
+                  documents provided by the course coordinator.
+                </textarea>
                 <div class="edit-actions">
                   <button class="save-btn">Save</button>
                   <button class="cancel-btn">Cancel</button>
@@ -363,7 +365,7 @@ Documents vary from organization to organization, but normally they would ask fo
               </div>
               <div class="edit-mode" hidden>
                 <textarea class="edit-textarea" rows="4">
-Kindly email it-support@abc.ac.bw for more help, please provide our student id as a r</textarea
+                  Kindly email it-support@abc.ac.bw for more help, please provide our student id as a response</textarea
                 >
                 <div class="edit-actions">
                   <button class="save-btn">Save</button>
@@ -402,12 +404,14 @@ Kindly email it-support@abc.ac.bw for more help, please provide our student id a
               </div>
               <div class="edit-mode" hidden>
                 <textarea class="edit-textarea" rows="6">
-Please verify the following:
-• Ensure that your report is in the correct format (e.g., PDF, Word).
-• Check if the file size exceeds the allowed limit.
-
-If you continue experiencing the issue, take a screenshot of the error message and contact technical support at it-support@abc.ac.bw, and we will investigate further.</textarea
-                >
+                  Please verify the following:
+                  • Ensure that your report is in the correct format (e.g., PDF, Word).
+                  • Check if the file size exceeds the allowed limit.
+                  
+                  If you continue experiencing the issue, take a screenshot of the error 
+                  message and contact technical support at it-support@abc.ac.bw, and we 
+                  will investigate further.
+                </textarea>
                 <div class="edit-actions">
                   <button class="save-btn">Save</button>
                   <button class="cancel-btn">Cancel</button>
@@ -418,84 +422,8 @@ If you continue experiencing the issue, take a screenshot of the error message a
         </section>
       </main>
     </div>
-    <script>
-      // Get all edit and answer buttons
-      const editButtons = document.querySelectorAll(".edit-btn");
-      const answerButtons = document.querySelectorAll(".answer-btn");
-
-      // Add event listeners to edit buttons
-      editButtons.forEach((button) => {
-        button.addEventListener("click", function () {
-          const faqItem = this.closest(".faq-item");
-          const editMode = faqItem.querySelector(".edit-mode");
-
-          // Show edit mode
-          editMode.hidden = false;
-
-          // Hide the normal actions
-          this.parentElement.style.display = "none";
-        });
-      });
-
-      // Add event listeners to answer buttons
-      answerButtons.forEach((button) => {
-        button.addEventListener("click", function () {
-          const faqItem = this.closest(".faq-item");
-          const editMode = faqItem.querySelector(".edit-mode");
-
-          // Show edit mode
-          editMode.hidden = false;
-
-          // Hide the normal actions
-          this.parentElement.style.display = "none";
-        });
-      });
-
-      // Add event listeners to cancel buttons
-      document.querySelectorAll(".cancel-btn").forEach((button) => {
-        button.addEventListener("click", function () {
-          const faqItem = this.closest(".faq-item");
-          const editMode = faqItem.querySelector(".edit-mode");
-          const actions = faqItem.querySelector(".faq-actions");
-
-          // Hide edit mode
-          editMode.hidden = true;
-
-          // Show the normal actions
-          actions.style.display = "flex";
-        });
-      });
-
-      // Add event listeners to save buttons
-      document.querySelectorAll(".save-btn").forEach((button) => {
-        button.addEventListener("click", function () {
-          const faqItem = this.closest(".faq-item");
-          const editMode = faqItem.querySelector(".edit-mode");
-          const actions = faqItem.querySelector(".faq-actions");
-          const textarea = editMode.querySelector(".edit-textarea");
-          const answerElement = faqItem.querySelector(".faq-answer");
-
-          // If there's an answer element, update its content
-          if (answerElement) {
-            // Simple text update - in a real app you'd handle HTML formatting
-            answerElement.textContent = textarea.value;
-          } else {
-            // Create a new answer element if it doesn't exist
-            const newAnswer = document.createElement("p");
-            newAnswer.className = "faq-answer";
-            newAnswer.textContent = textarea.value;
-
-            // Insert before the actions div
-            faqItem.insertBefore(newAnswer, actions);
-          }
-
-          // Hide edit mode
-          editMode.hidden = true;
-
-          // Show the normal actions
-          actions.style.display = "flex";
-        });
-      });
+    <script src="script.js">
+     
     </script>
   </body>
 </html>
